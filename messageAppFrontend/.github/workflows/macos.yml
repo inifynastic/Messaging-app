@@ -1,0 +1,27 @@
+name: macOS Build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.5.3"
+      - name: Configure CMake
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --config Release
+      - name: Deploy Qt
+        run: macdeployqt build/messageAppFrontend.app
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: messageAppFrontend-macOS
+          path: build/messageAppFrontend.app
