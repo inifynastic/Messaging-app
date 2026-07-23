@@ -16,7 +16,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: "6.5.3"
+          version: "6.7.3"
       - name: Configure CMake
         run: cmake -B build -DCMAKE_BUILD_TYPE=Release
       - name: Build
