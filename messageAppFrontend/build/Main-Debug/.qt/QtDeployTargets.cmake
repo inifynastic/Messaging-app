@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_messageAppFrontend_FILE /home/inifynastic/Documents/development-zone/webAndAI/learningWeb/messageAppFrontend/build/Main-Debug/messageAppFrontend)
+set(__QT_DEPLOY_TARGET_messageAppFrontend_TYPE EXECUTABLE)
